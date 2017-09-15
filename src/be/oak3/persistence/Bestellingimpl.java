@@ -1,6 +1,7 @@
-package be.oak3.model;
+package be.oak3.persistence;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
+import be.oak3.model.Parfum;
+import be.oak3.model.Product;
 
 import java.util.ArrayList;
 import java.util.Comparator;
