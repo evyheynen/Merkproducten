@@ -67,29 +67,21 @@ public abstract class Product implements Comparable<Product>{
     public int compareTo(Product p){
         return getProductNummer()-p.getProductNummer();
     }
+
     public String getProductCode() {
-        String code = getMerk().substring(0,4)+ getNaam().substring(0,4)+getVolume();
-        code.toUpperCase().replace(" ","_");
-        return code;
+        String code = getMerk().substring(0,3)+ getNaam().substring(0,3)+getVolume();
+        return code.toUpperCase().replace(" ","_");
     }
-        /*StringBuilder code = new StringBuilder();
-        code.append(getMerk().substring(0, 4)).append(getNaam().substring(0, 4)).append(getVolume());
-        code.toString();
-        code.toUpperCase().replace(" ","_");
-        return code;
-    }
-    */
+
     public static Comparator<Product> sorteerOpMerknaam(){
-        return (m1, m2)->m1.getMerk().compareTo(m2.getMerk());
+        return (m1, m2)->m1.getNaam().compareTo(m2.getNaam());
     }
 
     @Override
-    public String toString(){
-        return getProductNummer()+" "+"Merk: "+getMerk()+"\t"+"Naam: "+getNaam()+"\t"+"Volume: "+getVolume()+"\t"+"Prijs: "+getPrijs()+"\t"+"Code: "+code;
+    public String toString() {
+        return String.format("%d%s%3%-20s%10s%3sml%8s%4.2f%5s",
+                productNummer, "Merk: ", merk, "Naam: ", naam, volume, "Prijs: ", prijs, getProductCode());
     }
-
-        /*return String.format(%5d%10s%30s\t%10d%2s%10.2%10s%,productNummer,"Merk: ",merk,"Naam: ", naam,volume,"ml","Prijs: ", prijs, code);*/
-
 
 }
 
