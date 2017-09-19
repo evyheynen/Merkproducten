@@ -100,8 +100,7 @@ public abstract class Product implements Comparable<Product>{
 
     @Override
     public String toString() {
-        return String.format("%d%s%-20s%10s%-24s%10%3sml%8s%4.2f%5s%s",
-                productNummer, "Merk: ", merk, "Naam: ", naam,"Volume: ",volume, "Prijs: ", prijs,"Code: "+ getProductCode());
+        return String.format("%1$4s Merk: %2$-20s Naam: %3$-30s Volume: %4$3sml %5$10s %6$5s Code: %7$-15s", getProductNummer(), getMerk(), getNaam(), getVolume(), "Prijs:", getPrijs(), getProductCode());
     }
 
     @Override
