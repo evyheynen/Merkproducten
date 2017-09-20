@@ -2,6 +2,8 @@ package be.oak3.model;
 
 import java.util.Comparator;
 
+import static org.apache.commons.lang3.StringUtils.*;
+
 public abstract class Product implements Comparable<Product>{
     private int productNummer;
     private String merk;
@@ -61,10 +63,15 @@ public abstract class Product implements Comparable<Product>{
     }
 
     //METHODES
-    public String getProductCode() {
+   /* public String getProductCode() {
         String result = merk.substring(0,3)+ naam.substring(0,3)+String.valueOf(volume);
         return result.toUpperCase().replace(" ","_");
     }
+    */
+   //apache commens
+   public String getProductCode(){
+       return join(left(merk,3),left(naam,3),volume).replaceAll(" ","_").toUpperCase();
+   }
 
     public static Comparator<Product> sorteerOpMerknaam(){
         return (m1, m2)->m1.getMerk().compareTo(m2.getMerk());

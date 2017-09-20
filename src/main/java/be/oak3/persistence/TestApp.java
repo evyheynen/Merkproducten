@@ -1,10 +1,15 @@
 package be.oak3.persistence;
 
 import be.oak3.model.Product;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 public class TestApp {
+
+    private static final Logger LOGGER   = LogManager.getLogger();
+
     public static void main(String[] args) {
         System.out.printf("Oplossing van %s %s\n", "Kenneth Van Gijsel ",
                 "Java Instructeur");
@@ -16,7 +21,7 @@ public class TestApp {
             bestelling.voegProductToe(artikel);
         }
 
-        System.out.println("Lijst gesorteerd op natuurlijke volgorde: ");
+        LOGGER.error("Lijst gesorteerd op natuurlijke volgorde: ");
         bestelling.sorteer();
 
         System.out.println("\nLijst gesorteerd op merknaam: ");
