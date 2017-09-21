@@ -5,6 +5,7 @@ import be.oak3.model.Product;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,12 +14,9 @@ public class BestellingImpl implements Bestelling {
     List<Product> producten;
     private static int productNummer = 1000;
 
-
-
     public List<Product> getProducten() {
         return producten;
     }
-
 
 
     public BestellingImpl() {
@@ -41,14 +39,6 @@ public class BestellingImpl implements Bestelling {
     }
 
     @Override
-    public void sorteerOpMerk() {
-
-    }
-    /* Collections.sort(producten);*/
-
-    /* n.logger.debug("");
-
-    @Override
     public void sorteerOpMerk(){
         producten.stream().sorted(Product.sorteerOpMerknaam()).forEach(System.out::println);
     }
@@ -57,21 +47,15 @@ public class BestellingImpl implements Bestelling {
     @Override
     public void sorteerOpVolume(){
         producten.stream().sorted((v1,v2)->v1.getVolume()-v2.getVolume()).forEach(System.out::println);
-}
-
-    @Override
-    public void toonPerMerk(String merk) {
-        producten.stream().filter(product -> product.getMerk().equalsIgnoreCase(merk)).forEach(System.out::println);
     }
-
 
     @Override
     public List<Product>lijstVanBepaaldMerk(String merk){
         return producten.stream().filter(product->product.getMerk().equalsIgnoreCase(merk)).collect(Collectors.toList());
     }
     @Override
-    public void toonGoedkopereProducten(){
-        producten.stream().filter(p->p.getPrijs()<50).forEach(System.out::println);
+    public List<Product> lijstVanGoedkopeProducten(){
+        return producten.stream().filter(p->p.getPrijs()<50).collect(Collectors.toList());
     }
 
     @Override
@@ -80,7 +64,8 @@ public class BestellingImpl implements Bestelling {
     }
 
     @Override
-    public void toonParfums() { producten.stream().filter(p->p instanceof Parfum).forEach(System.out::println);
+    public List<Product> lijstVanParfums() {
+        return producten.stream().filter(p->p instanceof Parfum).collect(Collectors.toList());
     }
 
     @Override

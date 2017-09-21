@@ -21,26 +21,26 @@ public class TestApp {
             bestelling.voegProductToe(artikel);
         }
 
-        LOGGER.error("Lijst gesorteerd op natuurlijke volgorde: ");
+        LOGGER.debug("Lijst gesorteerd op natuurlijke volgorde: ");
         bestelling.sorteer();
 
-        System.out.println("\nLijst gesorteerd op merknaam: ");
+        LOGGER.debug("\nLijst gesorteerd op merknaam: ");
         bestelling.sorteerOpMerk();
 
-        System.out.println("\nLijst gesorteerd op volume: ");
+        LOGGER.debug("\nLijst gesorteerd op volume: ");
         bestelling.sorteerOpVolume();
 
-        System.out.println("\nVan het merk Georgio Armani:");
-        bestelling.toonPerMerk("Georgio Armani");
+        LOGGER.debug("\nVan het merk Georgio Armani:");
+        bestelling.lijstVanBepaaldMerk("Georgio Armani");
 
-        System.out.println("\nAlle Parfums:");
-        bestelling.toonParfums();
+        LOGGER.debug("\nAlle Parfums:");
+        bestelling.lijstVanParfums();
 
-        System.out.println("\nAlle producten onder €50; ");
-        bestelling.toonGoedkopereProducten();
+        LOGGER.debug("\nAlle producten onder €50; ");
+        bestelling.lijstVanGoedkopeProducten();
 
         Product product = bestelling.zoekDuursteProduct();
-        System.out.println("\nDuurste product:\n" + product);
+        LOGGER.debug("\nDuurste product:\n" + product);
 
         System.out.printf("\nTotale prijs: €%.2f", bestelling.totalePrijs());
 

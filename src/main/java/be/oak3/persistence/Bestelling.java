@@ -15,14 +15,15 @@ public interface Bestelling extends Berekenbaar {
 
     public void sorteerOpVolume();
 
-    public void toonPerMerk(String merk);
-
-    public List<Product>lijstVanBepaaldMerk(String merk);
-
-    public void toonGoedkopereProducten();
-
     public Product zoekDuursteProduct();
 
-    public void toonParfums();
+
+
+    public List<Product> lijstVanBepaaldMerk(String merk);
+
+    public List<Product> lijstVanParfums();
+
+    public List<Product> lijstVanGoedkopeProducten();
+
 
 }
