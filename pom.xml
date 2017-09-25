@@ -13,7 +13,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <log.level>DEBUG</log.level>
+        <log.level>debug</log.level>
     </properties>
 
 
@@ -28,6 +28,13 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/recources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
     <dependencies>
@@ -56,7 +63,6 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.9.0</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -65,6 +71,11 @@
             <version>23.0</version>
         </dependency>
 
+        <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.39</version>
+            </dependency>
 
     </dependencies>
 

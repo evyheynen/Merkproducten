@@ -72,4 +72,10 @@ public class BestellingImpl implements Bestelling {
     public double totalePrijs(){
         return producten.stream().mapToDouble(Product::getPrijs).sum();
     }
+
+    @Override
+    public List<Product> getAlleProducten(){
+        return producten.stream().collect(Collectors.toList());
+    }
+
 }

@@ -7,23 +7,24 @@ import java.util.List;
 
 public interface Bestelling extends Berekenbaar {
 
-    public void voegProductToe(Product product);
+    void voegProductToe(Product product);
 
-    public void sorteer();
+    void sorteer();
 
-    public void sorteerOpMerk();
+    void sorteerOpMerk();
 
-    public void sorteerOpVolume();
+    void sorteerOpVolume();
 
-    public Product zoekDuursteProduct();
+    Product zoekDuursteProduct();
 
 
 
-    public List<Product> lijstVanBepaaldMerk(String merk);
+    List<Product> lijstVanBepaaldMerk(String merk);
 
-    public List<Product> lijstVanParfums();
+    List<Product> lijstVanParfums();
 
-    public List<Product> lijstVanGoedkopeProducten();
+    List<Product> lijstVanGoedkopeProducten();
 
+    List<Product> getAlleProducten();
 
 }
